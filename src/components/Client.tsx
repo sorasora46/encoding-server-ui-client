@@ -35,7 +35,7 @@ export const Client = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const clientsResponse = await axios.get<IClientResponse>("http://192.168.1.6:1985/api/v1/clients");
+                const clientsResponse = await axios.get<IClientResponse>(`${import.meta.env.VITE_API_URL}/api/v1/clients`);
                 setClients(clientsResponse.data.clients);
             } catch (error) {
                 console.error("Error fetching client data:", error);

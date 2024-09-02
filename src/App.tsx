@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const detailResponse = await axios.get<IDetail>("http://192.168.1.6:1985/api/v1")
+      const detailResponse = await axios.get<IDetail>(`${import.meta.env.VITE_API_URL}/api/v1`)
       setDetail(detailResponse.data)
     }
 

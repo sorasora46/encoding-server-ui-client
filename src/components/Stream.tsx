@@ -55,7 +55,7 @@ export const Stream = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get<IStreamResponse>('http://192.168.1.6:1985/api/v1/streams');
+                const response = await axios.get<IStreamResponse>(`${import.meta.env.VITE_API_URL}/api/v1/streams`);
                 setStreams(response.data.streams);
             } catch (error) {
                 console.error('Error fetching streams:', error);
